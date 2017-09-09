@@ -45,6 +45,7 @@ Code
 - Add Unit tests for API
 - Add Code coverage
 - Integrate to Trevis
+- Integrated Server discovery via DNS (Consul style)
 
 Functionality:
 - Deprecated subnets are deleted from API (maybe we should keep them for historical purposes)
