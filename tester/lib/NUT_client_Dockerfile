@@ -1,0 +1,16 @@
+# NUT Client Dockerfile
+
+FROM centos:7
+# RUN yum install epel-release
+
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN python get-pip.py
+RUN pip install docker
+
+WORKDIR /root 
+COPY test_docker.py test_docker.py
+
+ENV DOCKER_HOST unix:///var/run/docker_host.sock
+VOLUME [/var/run/docker_host.sock]
+#ENTRYPOINT []
+CMD ["/usr/bin/python", "test_docker.py"]
