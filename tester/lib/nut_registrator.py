@@ -119,7 +119,7 @@ class NUTRegistrator:
         nodes = self.api.get("%s?hostname=%s" %
                              (self.schema['nodes'], hostname))
         if nodes["count"] == 0:
-            node = self.api.post("nodes/", payload=payload)
+            node = self.api.post(self.schema['nodes'], payload=self.node_info)
         elif nodes["count"] == 1:
             node = nodes["results"][0]
             if int(node["running_containers"]) != \

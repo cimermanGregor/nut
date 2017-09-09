@@ -67,7 +67,7 @@ class Subnet(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "%s @ %s" % (self.name, self.network.name)
+        return "%s @ %s" % (self.id, self.network.name)
 
     def __unicode__(self):
-        return u"%s @ %s" % (self.name, self.network.name)
+        return u"%s @ %s" % (self.id, self.network.name)
